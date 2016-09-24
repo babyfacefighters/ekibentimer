@@ -9,11 +9,16 @@ var style_height;
 var accel = 0.05;
 var upper_limit = 100;
 var lower_limit = 80;
+var flag_bomb = 0;
 
 setInterval(bomb_timer, 1);
 setInterval(caution, 10);
 
 function bomb_timer(){
+    if(bomb_time <= 0 && flag_bomb != 1){
+        flag_bomb = 1;
+        myNavigator.pushPage("miss.html");
+    }
     //現在時刻の取得
     now = new Date();
     now_h = now.getHours();

@@ -35,8 +35,8 @@ function move_timer(){
     now_amount = seconds_amouts(now_h, now_m, now_s);
     //到着時刻の取得
     arrival_hour = 23;
-    arrival_minutes = 4;
-    arrival_seconds = 30;
+    arrival_minutes = 58;
+    arrival_seconds = 10;
     arrival_amount = seconds_amouts(arrival_hour, arrival_minutes, arrival_seconds);
     //移動時間を計算
     timer_amount = arrival_amount - now_amount;
