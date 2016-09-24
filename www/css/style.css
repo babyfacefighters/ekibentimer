@@ -42,7 +42,7 @@
 #timer_display{
     position: absolute;
     bottom:40%;
-    left:30%;
+    left:10%;
 }
 
 #sta1{
@@ -55,4 +55,21 @@
     position: absolute;
     bottom: 10%;
     right: 10%;
+}
+
+#bomb_timer_display{
+    position: absolute;
+    bottom: 5%;
+    left: 30%;
+}
+
+#buy{
+    position: absolute;
+    bottom: 15%;
+    left: 30%;
+}
+
+hutoji{
+font-size:40px;
+font-weight: bolder;
 }
