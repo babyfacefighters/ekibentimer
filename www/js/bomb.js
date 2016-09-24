@@ -18,7 +18,7 @@ setInterval(bomb_timer, 1);
 setInterval(caution, 10);
 
 function bomb_timer(){
-    if(bomb_time <= 0 && flag_bomb != 1){
+    if(bomb_time < 0 && flag_bomb != 1){
         flag_bomb = 1;
         myNavigator.pushPage("miss.html");
     }
