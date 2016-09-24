@@ -12,6 +12,7 @@ var lower_limit = 85;
 var flag_bomb = 0;
 var set_3minute = 0;
 var arrival_3minute;
+var bob_flag = 0;
 
 setInterval(bomb_timer, 1);
 setInterval(caution, 10);
@@ -28,7 +29,7 @@ function bomb_timer(){
     now_s = now.getSeconds();
     now_amount = seconds_amouts(now_h, now_m, now_s);
     if(set_3minute === 0  && flag === 1){
-        arrival_3minute = now_amount + 300;
+        arrival_3minute = now_amount + 12;
         set_3minute = 1;
     }
     bomb_time = arrival_3minute-now_amount;
@@ -45,6 +46,16 @@ function bomb_timer(){
 }
 
 function caution(){
+    if(bomb_time < 10 && bob_flag != 1){
+        biyon();
+        bob_flag = 1;
+    }
+
+    if(bomb_time < 10){
+        navigator.vibrate(3000);
+    }
+
+
     if(bomb_time < 240 && bomb_time >= 180){//あと4分経過
         if(width > upper_limit)accel = -0.1;
         else if(width < lower_limit)accel = 0.1;
@@ -68,7 +79,7 @@ function caution(){
         else if(width < lower_limit)accel = 0.05;
     }
 
-    if(bomb_time > 0){
+    if(bomb_time >= 0){
         width += accel;
         height += accel;
     }
@@ -78,4 +89,15 @@ function caution(){
     style_height = height+"%";
     target.style.width = style_width;
     target.style.height =style_height;
+}
+
+function biyon(){
+    // AudioElement を作成
+    var audio = new Audio();
+    // サウンドファイルを指定
+    audio.src = "bob.mp3";
+    //media.loop = true;
+    // 再生を開始する
+    audio.play();
+    // バイブレーション作動
 }
