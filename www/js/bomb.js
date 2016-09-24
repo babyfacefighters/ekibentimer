@@ -1,4 +1,4 @@
-var bomb_time = 300;
+var bomb_time;
 var bomb_m;
 var bomb_s;
 var bomb_display_time="";
@@ -10,10 +10,18 @@ var accel = 0.05;
 var upper_limit = 100;
 var lower_limit = 80;
 
-setInterval(bomb_timer, 1000);
+setInterval(bomb_timer, 1);
 setInterval(caution, 10);
 
 function bomb_timer(){
+    //現在時刻の取得
+    now = new Date();
+    now_h = now.getHours();
+    now_m = now.getMinutes();
+    now_s = now.getSeconds();
+    now_amount = seconds_amouts(now_h, now_m, now_s);
+    bomb_time = arrival_amount-now_amount+ 300;
+
     bomb_m = Math.floor(bomb_time/60);
     bomb_s = bomb_time%60;
 

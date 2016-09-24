@@ -18,10 +18,15 @@ var timer_amount;
 //表示要文字
 var m;
 var s;
+var flag = 0;
 
-setInterval(move_timer, 1000);
+setInterval(move_timer, 1);
 
 function move_timer(){
+    if(timer_amount <= 0 && flag != 1 && place == 1){
+        myNavigator.pushPage("bomb_tabbar.html");
+        flag = 1;
+    }
     //現在時刻の取得
     now = new Date();
     now_h = now.getHours();
@@ -30,8 +35,8 @@ function move_timer(){
     now_amount = seconds_amouts(now_h, now_m, now_s);
     //到着時刻の取得
     arrival_hour = 23;
-    arrival_minutes = 50;
-    arrival_seconds = 50;
+    arrival_minutes = 4;
+    arrival_seconds = 30;
     arrival_amount = seconds_amouts(arrival_hour, arrival_minutes, arrival_seconds);
     //移動時間を計算
     timer_amount = arrival_amount - now_amount;
