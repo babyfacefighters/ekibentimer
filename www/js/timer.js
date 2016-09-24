@@ -22,6 +22,7 @@ var flag = 0;
 var drawidth;
 var startwidth;
 var drawflag = 0;
+var otaruflag = 0;
 
 setInterval(move_timer, 1);
 
@@ -29,6 +30,11 @@ function move_timer(){
     if(timer_amount <= 0 && flag != 1 && place == 1){
         myNavigator.pushPage("bomb_tabbar.html");
         flag = 1;
+    }
+
+    if(timer_amount <= 20*60 && otaruflag != 1 &&place == 1){
+        otaru();
+        otaruflag = 1;
     }
     //現在時刻の取得
     now = new Date();
@@ -73,4 +79,15 @@ function goto_bomb(){
 
 function seconds_amouts(h, m, s){
     return h*3600+m*60+s;
+}
+
+function otaru(){
+    // AudioElement を作成
+    var audio = new Audio();
+    // サウンドファイルを指定
+    audio.src = "otaru.mp3";
+    // 再生を開始する
+    audio.play();
+    // バイブレーション作動
+    navigator.vibrate(3000);
 }
