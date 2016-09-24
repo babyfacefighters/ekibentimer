@@ -2,13 +2,31 @@
 
     <style>
         size{
+            font-size:20px;
+            font-weight: bolder;
+        }
+
+        size1{
             font-size:30px;
         }
+
+        opacity{
+            opacity: 0.5;
+        }
+
     </style>
 </head>
 
 <ons-page>
-    <br /><br /><br /><br /><br />
+
+<opacity>
+<img src="food_ekiben.png" style="position:absolute;left:10px;top:220px;width="50%" height="50%"">
+</opacity>
+    <br /><br />
+    <div style="text-align: center">
+        <size1>情報を入力してください</size1>
+        </div>
+    <br />
 
     <div style="text-align: center">
         <size>出発駅
@@ -27,9 +45,9 @@
         </size>
     </div>
 
-    <br /><br />
+    <br />
     <div style="text-align: center">
-        <size>出発時刻
+        <size>出発時刻　
             <select name="時" id="departure_time">
                 <option value="">選択してください</option>
                 <option value="00">2:50</option>
@@ -49,9 +67,9 @@
     </div>
 
     <br /><br />
-
-    <div style="text-align: center">
-        <size>到着駅
+    
+    <div style="position:absolute; left:73px">
+        <size>到着駅　　
             <select name="到着駅" onchange="set_arrival()">
                 <option value="">選択してください</option>
                 <option value="1">札幌</option>
@@ -69,13 +87,14 @@
 
     <br /><br />
 
-    <div style="text-align: center">
-        <size><div id="arrival_time">到着予定時刻</div></size>
+    <div style="position:absolute; left:125px">
+        <size>到着予定時刻<br /></size></div>
+        <size><div style="position:absolute; left:160px"><div id="arrival_time"><br/></div></div></size>
     </div>
 
-    <br /><br />
+    <br /><br /><br />
 
-    <div style="text-align: center">
+    <div style="position:absolute; left:73px">
         <size>チャレンジ
             <select name="チャレンジ" onchange="set_challenge()" id="goal_station">
                 <option value="">選択してください</option>
@@ -85,18 +104,22 @@
         </size>
     </div>
 
-    <br /><br />
+    <br />
+    <br />
 
-    <div style="text-align: center">
-        <size><div id="challenge_time">チャレンジ予定時刻</div></size>
+    <div style="position:absolute; left:100px">
+        <size>チャレンジ予定時刻<br /></size></div>
+        <size><div style="position:absolute; left:160px"><div id="challenge_time"><br/></div></div></size>
     </div>
 
-    <br /><br />
+    <br />
 
     <div style="text-align: center">
-        <ons-button
+
+    <img src="timer_set.png"style="position:absolute;left:73px;top:500px;">
+        <ons-button modifier="quiet"
         onclick="goto_tabbar()">
-        <size>タイマースタート！</size>
+        <size>　<br /> 　　　　　　　　　 　<br />　</size>
     </ons-button>
 </div>
 
