@@ -1,0 +1,17 @@
+<ons-page>
+<<<<<<< H
+<div>
+    <img src="message_omedetou.png" width="100%" height="100%">
+    <img src="flower_butterfly.png" width="100%" height="100%">
+</div>
+<br/><br/>
+<div>
+    <ons-button modifier="large" ng-click="myNavigator.pushPage('start.html')">’ºÇ’½é’¤Î’²è’ÌÌ’¤Ë’Ìá’¤ë</ons-button>
+</div>
+<<<<<<< HEAD
+
+</ons-page>
+=======
+    
+</ons-page>
+>>>>>>> e2f37c48d76f6497cd7c7f92dc4cc9036a24a5c6

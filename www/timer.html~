@@ -7,8 +7,11 @@
     <br/>
     <div id="timer_display">00時間00分00秒</div>
     <br />
-
+<<<<<<< HEAD
+    <ons-button ng-click="myNavigator.pushPage('bomb.html')">
+=======
     <ons-button onclick="goto_bomb()">
+>>>>>>> e2f37c48d76f6497cd7c7f92dc4cc9036a24a5c6
         到着
     </ons-button>
 </div>
