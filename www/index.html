@@ -1,5 +1,6 @@
 <!DOCTYPE HTML>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -10,33 +11,39 @@
     <link rel="stylesheet" href="css/style.css">
     <script>
         ons.bootstrap();
- //使う効果音の名前を格納する
-    var sud = 'sen_ge_bom21.mp3';
-    
-    //media変数の宣言
-    var media = null; 
-    
-    //In Android, it's necessary to specify the absolute path
-         function getPath(){
-             var str = location.pathname;
-             var i = str.lastIndexOf('/');
-             return str.substring(0,i+1);
-         }
-
-    //cordovaの準備
-    document.addEventListener("deviceready", onDeviceReady, false);
-    
-    
-    //準備ができた直後に呼ばれるメソッド
-    function onDeviceReady() {
-    }
+        ons.ready(function()
+        {
+            myNavigator.on('postpush', function(event)
+            {
+                if (myNavigator.getCurrentPage().page == "miss.html")
+                {
+                    // AudioElement を作成
+                    var audio = new Audio();
+                    // サウンドファイルを指定
+                    audio.src = "sen_ge_bom21.mp3";
+                    // 再生を開始する
+                    audio.play()
+                    // バイブレーション作動
+                    navigator.vibrate(3000);
+                }else if (myNavigator.getCurrentPage().page == "success.html")
+                {
+                    // AudioElement を作成
+                    var audio = new Audio();
+                    // サウンドファイルを指定
+                    audio.src = "sen_ge_bom21.mp3";
+                    // 再生を開始する
+                    audio.play()
+                    // バイブレーション作動
+                    navigator.vibrate(3000);
+                }
+            });
+        });
     </script>
-
     <script src="js/timer.js"></script>
 </head>
-<body>
-    <ons-navigator var="myNavigator" page="start.html">
-</ons-navigator>
 
+<body>
+    <ons-navigator var="myNavigator" page="start.html"> </ons-navigator>
 </body>
+
 </html>

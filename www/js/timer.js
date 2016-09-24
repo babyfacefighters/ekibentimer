@@ -19,9 +19,9 @@ var timer_amount;
 var m;
 var s;
 
-setInterval(display_timer, 1000);
+setInterval(move_timer, 1000);
 
-function display_timer(){
+function move_timer(){
     //現在時刻の取得
     now = new Date();
     now_h = now.getHours();
@@ -46,8 +46,6 @@ function display_timer(){
     timer = "0"+timer_h+"時間"+m+"分"+s+"秒";
     //数字を表示する要素へ代入
     document.getElementById("timer_display").innerHTML = timer;
-    m = "";
-    s = "";
 }
 
 function seconds_amouts(h, m, s){
