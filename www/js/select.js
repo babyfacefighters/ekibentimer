@@ -47,5 +47,5 @@ function set_challenge(){
         document.getElementById("challenge_time").innerHTML = challenge_h +":" +departure.substring(3,5);
     }
     options = {"challenge_time_h":parseInt(challenge_h), "challenge_time_m":parseInt(challenge_m)};
-    alert(options.challenge_time_h + ":" + options.challenge_time_m);
+    //alert(options.challenge_time_h + ":" + options.challenge_time_m);
 }

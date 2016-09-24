@@ -8,8 +8,10 @@ var style_width;
 var style_height;
 var accel = 0.05;
 var upper_limit = 100;
-var lower_limit = 80;
+var lower_limit = 85;
 var flag_bomb = 0;
+var set_3minute = 0;
+var arrival_3minute;
 
 setInterval(bomb_timer, 1);
 setInterval(caution, 10);
@@ -25,7 +27,11 @@ function bomb_timer(){
     now_m = now.getMinutes();
     now_s = now.getSeconds();
     now_amount = seconds_amouts(now_h, now_m, now_s);
-    bomb_time = arrival_amount-now_amount+ 300;
+    if(set_3minute === 0  && flag === 1){
+        arrival_3minute = now_amount + 300;
+        set_3minute = 1;
+    }
+    bomb_time = arrival_3minute-now_amount;
 
     bomb_m = Math.floor(bomb_time/60);
     bomb_s = bomb_time%60;

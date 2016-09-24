@@ -53,6 +53,11 @@ function move_timer(){
     document.getElementById("timer_display").innerHTML = timer;
 }
 
+function goto_bomb(){
+    myNavigator.pushPage('bomb_tabbar.html');
+    flag = 1;
+}
+
 function seconds_amouts(h, m, s){
     return h*3600+m*60+s;
 }
