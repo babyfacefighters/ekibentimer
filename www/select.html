@@ -29,7 +29,7 @@
     <br /><br />
     <div style="text-align: center">
         <size>出発時刻
-            <select name="時" onchange="set_arrival()" id="departure_time">
+            <select name="時" id="departure_time">
                 <option value="">選択してください</option>
                 <option value="00">9:10</option>
                 <option value="01">10:10</option>
@@ -42,6 +42,7 @@
                 <option value="08">17:10</option>
                 <option value="09">18:00</option>
                 <option value="10">19:00</option>
+                <option value="11">22:50</option>
             </select>
         </size>
     </div>
@@ -144,7 +145,7 @@
 
     <div style="text-align: center">
         <size>到着駅
-            <select name="到着駅">
+            <select name="到着駅" onchange="set_arrival()">
                 <option value="">選択してください</option>
                 <option value="1">札幌</option>
                 <option value="2">新小樽</option>
@@ -171,7 +172,7 @@
 
     <div style="text-align: center">
         <size>チャレンジ
-            <select name="チャレンジ">
+            <select name="チャレンジ" onchange="set_challenge()">
                 <option value="">選択してください</option>
                 <option value="1">新小樽</option>
                 <option value="2">新函館北斗</option>
@@ -179,7 +180,15 @@
         </size>
     </div>
 
-    <br /><br /><br /><br /><br /><br />
+    <br /><br />
+
+    <div style="text-align: center">
+        <size>チャレンジ時刻
+            <div id="challenge_time"></div>
+        </size>
+    </div>
+
+    <br /><br />
 
     <div style="text-align: center">
         <ons-button
