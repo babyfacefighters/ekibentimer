@@ -5,16 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta http-equiv="Content-Security-Policy" content="default-src * data:; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
     <script src="components/loader.js"></script>
+    <script src="js/music.js"></script>
     <link rel="stylesheet" href="components/loader.css">
     <link rel="stylesheet" href="css/style.css">
     <script>
         ons.bootstrap();
-    //使う効果音の名前を格納する
+ //使う効果音の名前を格納する
     var sud = 'sen_ge_bom21.mp3';
-
+    
     //media変数の宣言
-    var media = null;
-
+    var media = null; 
+    
     //In Android, it's necessary to specify the absolute path
          function getPath(){
              var str = location.pathname;
@@ -24,12 +25,10 @@
 
     //cordovaの準備
     document.addEventListener("deviceready", onDeviceReady, false);
-
-
+    
+    
     //準備ができた直後に呼ばれるメソッド
     function onDeviceReady() {
-       //変数mediaに爆発音を格納し、以下mediaとして扱えるようにする
-        media = new Media(getPath() + sud, onSuccess, onError);
     }
     </script>
 
