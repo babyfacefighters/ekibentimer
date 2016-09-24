@@ -1,2 +1,10 @@
 /**/
+.timer {
+    width: 70%;
+    height: 70%;
+}
 
+.bomb {
+    width: 80%;
+    height: 80%;
+}

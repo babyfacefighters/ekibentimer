@@ -11,10 +11,10 @@
         ons.bootstrap();
     //使う効果音の名前を格納する
     var sud = 'sen_ge_bom21.mp3';
-    
+
     //media変数の宣言
-    var media = null; 
-    
+    var media = null;
+
     //In Android, it's necessary to specify the absolute path
          function getPath(){
              var str = location.pathname;
@@ -24,18 +24,21 @@
 
     //cordovaの準備
     document.addEventListener("deviceready", onDeviceReady, false);
-    
-    
+
+
     //準備ができた直後に呼ばれるメソッド
     function onDeviceReady() {
        //変数mediaに爆発音を格納し、以下mediaとして扱えるようにする
         media = new Media(getPath() + sud, onSuccess, onError);
     }
     </script>
+
+    <script src="js/timer.js"></script>
+    <script src="js/bomb.js"></script>
 </head>
 <body>
     <ons-navigator var="myNavigator" page="start.html">
-</ons-navigator> 
+</ons-navigator>
 
 </body>
 </html>
