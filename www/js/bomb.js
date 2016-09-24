@@ -1,4 +1,4 @@
-var bomb_time = 300;
+var bomb_time;
 var bomb_m;
 var bomb_s;
 var bomb_display_time="";
@@ -8,12 +8,31 @@ var style_width;
 var style_height;
 var accel = 0.05;
 var upper_limit = 100;
-var lower_limit = 80;
+var lower_limit = 85;
+var flag_bomb = 0;
+var set_3minute = 0;
+var arrival_3minute;
 
-setInterval(bomb_timer, 1000);
+setInterval(bomb_timer, 1);
 setInterval(caution, 10);
 
 function bomb_timer(){
+    if(bomb_time <= 0 && flag_bomb != 1){
+        flag_bomb = 1;
+        myNavigator.pushPage("miss.html");
+    }
+    //現在時刻の取得
+    now = new Date();
+    now_h = now.getHours();
+    now_m = now.getMinutes();
+    now_s = now.getSeconds();
+    now_amount = seconds_amouts(now_h, now_m, now_s);
+    if(set_3minute === 0  && flag === 1){
+        arrival_3minute = now_amount + 300;
+        set_3minute = 1;
+    }
+    bomb_time = arrival_3minute-now_amount;
+
     bomb_m = Math.floor(bomb_time/60);
     bomb_s = bomb_time%60;
 
