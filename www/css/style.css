@@ -56,3 +56,15 @@
     bottom: 10%;
     right: 10%;
 }
+
+#bomb_timer_display{
+    position: absolute;
+    bottom: 10%;
+    right: 39%;
+}
+
+#buy{
+    position: absolute;
+    bottom: 20%;
+    right: 35%;
+}
