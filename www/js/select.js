@@ -6,6 +6,8 @@ var arrival_m;
 var challenge_h;
 var challenge_m;
 var options;
+var d_sta;
+var g_sta;
 
 function goto_tabbar(){
     place = 1;
@@ -46,6 +48,11 @@ function set_challenge(){
         challenge_m = parseInt(departure.substring(3,5));
         document.getElementById("challenge_time").innerHTML = challenge_h +":" +departure.substring(3,5);
     }
-    options = {"challenge_time_h":parseInt(challenge_h), "challenge_time_m":parseInt(challenge_m)};
-    //alert(options.challenge_time_h + ":" + options.challenge_time_m);
+    var index = document.getElementById("departure_station").selectedIndex;
+    d_sta = document.getElementById("departure_station").options[index].text;
+    index = document.getElementById("goal_station").selectedIndex;
+    g_sta = document.getElementById("goal_station").options[index].text;
+    options = {"challenge_time_h":parseInt(challenge_h), "challenge_time_m":parseInt(challenge_m),
+                "dstation":d_sta, "gstation":g_sta};
+    //alert(options.dstation + ":" + options.gstation);
 }

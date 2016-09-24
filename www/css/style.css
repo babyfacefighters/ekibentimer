@@ -1,18 +1,58 @@
 /**/
-.timer {
-    width: 70%;
-    height: 70%;
-}
-
 .bomb {
     width: 80%;
     height: 80%;
 }
 
-  .page--blue__content{
-       background-color: blue;
-   }
-   
-   .button--red{
-       background-color: black;
-   }
+.page--blue__content{
+    background-color: blue;
+}
+
+.button--red{
+    background-color: black;
+}
+
+#box1{
+    background-color:#10cc94;
+    position:absolute;
+    top: 30px;
+    left: 0px;
+    width:0%;
+    height:100px;
+}
+
+#box2{
+    background-color:#ffffff;
+    position:absolute;
+    top: 130px;
+    left: 0px;
+    width:0%;
+    height: 20px;
+}
+
+#box3{
+    background-color:#bc1ade;
+    position:absolute;
+    top: 150px;
+    left: 0px;
+    width:0%;
+    height: 80px;
+}
+
+#timer_display{
+    position: absolute;
+    bottom:40%;
+    left:30%;
+}
+
+#sta1{
+    position: absolute;
+    bottom: 10%;
+    left: 10%;
+}
+
+#sta2{
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+}
