@@ -19,6 +19,9 @@ var timer_amount;
 var m;
 var s;
 var flag = 0;
+var drawidth;
+var startwidth;
+var drawflag = 0;
 
 setInterval(move_timer, 1);
 
@@ -44,13 +47,23 @@ function move_timer(){
     timer_m = Math.floor((timer_amount%3600)/60);
     timer_s = (timer_amount%3600)%60;
 
+    if(drawflag === 0){
+        startwidth = now_amount;
+        drawflag = 1;
+    }
     //alert("今の時間は"+now_h+"時"+now_m+"分"+now_s+"秒");
     //alert("所要時間は"+timer_h+"時間"+timer_m+"分"+timer_s+"秒");
     if(timer_m < 10)m = "0"+timer_m;else m = timer_m;
     if(timer_s < 10)s = "0"+timer_s;else s = timer_s;
     timer = "0"+timer_h+"時間"+m+"分"+s+"秒";
     //数字を表示する要素へ代入
+    drawidth = ((now_amount - startwidth)/(arrival_amount - startwidth))*100;
     document.getElementById("timer_display").innerHTML = timer;
+    document.getElementById("box1").style.width = drawidth+"%";
+    document.getElementById("box2").style.width = drawidth+"%";
+    document.getElementById("box3").style.width = drawidth+"%";
+    document.getElementById("sta1").innerHTML = "←"+myNavigator.getCurrentPage().options.dstation;
+    document.getElementById("sta2").innerHTML = myNavigator.getCurrentPage().options.gstation+"→";
 }
 
 function goto_bomb(){
