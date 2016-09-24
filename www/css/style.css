@@ -1,2 +1,18 @@
 /**/
+.timer {
+    width: 70%;
+    height: 70%;
+}
 
+.bomb {
+    width: 80%;
+    height: 80%;
+}
+
+  .page--blue__content{
+       background-color: blue;
+   }
+   
+   .button--red{
+       background-color: black;
+   }
