@@ -32,7 +32,7 @@ function bomb_timer(){
     now_s = now.getSeconds();
     now_amount = seconds_amouts(now_h, now_m, now_s);
     if(set_3minute === 0  && flag === 1){
-        arrival_3minute = now_amount + 12;
+        arrival_3minute = now_amount + 20;
         set_3minute = 1;
     }
     bomb_time = arrival_3minute-now_amount;
@@ -49,7 +49,7 @@ function bomb_timer(){
 }
 
 function caution(){
-    if(bomb_time < 10 && bob_flag != 1){
+    if(bomb_time < 10 && bob_flag != 1 && moved != 1){
         biyon();
         bob_flag = 1;
     }
@@ -95,6 +95,8 @@ function caution(){
 }
 
 function goto_success(){
+    //audio.pause();
+    //audio.currentTime = 0;
     successflag = 1;
     moved = 1;
     myNavigator.pushPage("success.html");
