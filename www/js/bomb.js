@@ -13,13 +13,16 @@ var flag_bomb = 0;
 var set_3minute = 0;
 var arrival_3minute;
 var bob_flag = 0;
+var successflag = 0;
+var moved = 0;
 
 setInterval(bomb_timer, 1);
 setInterval(caution, 10);
 
 function bomb_timer(){
-    if(bomb_time < 0 && flag_bomb != 1){
+    if(bomb_time < 0 && flag_bomb != 1 && successflag != 1){
         flag_bomb = 1;
+        moved = 1;
         myNavigator.pushPage("miss.html");
     }
     //現在時刻の取得
@@ -51,7 +54,7 @@ function caution(){
         bob_flag = 1;
     }
 
-    if(bomb_time < 10){
+    if(bomb_time < 10 && moved != 1){
         navigator.vibrate(3000);
     }
 
@@ -89,6 +92,12 @@ function caution(){
     style_height = height+"%";
     target.style.width = style_width;
     target.style.height =style_height;
+}
+
+function goto_success(){
+    successflag = 1;
+    moved = 1;
+    myNavigator.pushPage("success.html");
 }
 
 function biyon(){
